@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     // Active Tab
@@ -37,39 +38,10 @@ struct ContentView: View {
     ContentView()
 }
 
-enum Tab: String {
-    case ticket = "Авиабилеты"
-    case hotel = "Отели"
-    case map = "Короче"
-    case subscribe = "Подписки"
-    case profile = "Профиль"
-    
-    @ViewBuilder
-    var tabContent: some View {
-        switch self {
-        case .ticket:
-            Image(systemName: "airplane")
-            Text(self.rawValue)
-        case .hotel:
-            Image(systemName: "sofa.fill")
-            Text(self.rawValue)
-        case .map:
-            Image(systemName: "map.fill")
-            Text(self.rawValue)
-        case .subscribe:
-            Image(systemName: "bell.fill")
-            Text(self.rawValue)
-        case .profile:
-            Image(systemName: "person.fill")
-            Text(self.rawValue)
-        }
-        
-    }
-}
-
 struct Ticket: View {
     @State private var textFieldIn: String = ""
     @State private var textFieldOut: String = ""
+    @StateObject private var vm = OffersViewModel()
     
     var body: some View {
         NavigationStack {
@@ -89,14 +61,12 @@ struct Ticket: View {
                         
                         ScrollView(.horizontal) {
                             HStack(spacing: 20) {
-                                ForEach(0 ..< 5) { item in
-                                    Offers(
-                                        offers: OffersModel(
-                                            id: 1,
-                                            title: "Die Antwoord",
-                                            town: "Будапешт",
-                                            price: 22264
-                                        )
+                                ForEach(vm.allOffers) { offer in
+                                    OffersCard(
+                                        imageName: String(offer.id),
+                                        title: offer.title,
+                                        town: offer.town,
+                                        price: offer.price.value
                                     )
                                 }
                             }
@@ -126,6 +96,13 @@ struct Ticket: View {
         }
     }
 }
+
+
+
+
+
+
+
 
 struct Hotel: View {
     var body: some View {
@@ -163,20 +140,29 @@ struct Profile: View {
     }
 }
 
+
+
+
+
+
+
 struct SearchCard: View {
     @Binding var textFieldIn: String
     @Binding var textFieldOut: String
     
     var body: some View {
         HStack(spacing: 20) {
-            Image(systemName: "magnifyingglass")
-                .resizable()
-                .frame(width: 16, height: 16)
+            Button(action: {
+                
+            }, label: {
+                Image(systemName: "magnifyingglass")
+                    .resizable()
+                    .frame(width: 16, height: 16)
+            })
             
             VStack {
                 TextField(text: $textFieldIn) {
-                    Text("Минск")
-                        .foregroundStyle(.appWhite)
+                    Text("Откуда - Москва")
                 }
                 
                 RoundedRectangle(cornerRadius: 1)
@@ -187,6 +173,7 @@ struct SearchCard: View {
                     Text("Куда - Турция")
                 }
             }
+            .foregroundStyle(.appWhite)
             .padding(.vertical, 8)
         }
         .bold()
@@ -209,32 +196,130 @@ struct SearchTitle: View {
 }
 
 
-struct OffersModel {
-    var id: Int
+
+
+
+
+
+enum Tab: String {
+    case ticket = "Авиабилеты"
+    case hotel = "Отели"
+    case map = "Короче"
+    case subscribe = "Подписки"
+    case profile = "Профиль"
+    
+    @ViewBuilder
+    var tabContent: some View {
+        switch self {
+        case .ticket:
+            Image(systemName: "airplane")
+            Text(self.rawValue)
+        case .hotel:
+            Image(systemName: "sofa.fill")
+            Text(self.rawValue)
+        case .map:
+            Image(systemName: "map.fill")
+            Text(self.rawValue)
+        case .subscribe:
+            Image(systemName: "bell.fill")
+            Text(self.rawValue)
+        case .profile:
+            Image(systemName: "person.fill")
+            Text(self.rawValue)
+        }
+        
+    }
+}
+
+
+
+
+// MARK: - Offer Model
+struct OffersModel: Codable {
+    let offers: [Offer]
+}
+
+// MARK: - Offer
+struct Offer: Identifiable, Codable {
+    let id: Int
+    let title, town: String
+    let price: Price
+}
+
+// MARK: - Price
+struct Price: Codable {
+    let value: Int
+}
+
+
+// MARK: - Offer ModelView
+final class OffersViewModel: ObservableObject {
+    @Published var allOffers: [Offer] = []
+    var cancellables = Set<AnyCancellable>()
+    
+    init() {
+        getOffers()
+    }
+    
+    func getOffers() {
+        guard let url = URL(string: "https://run.mocky.io/v3/214a1713-bac0-4853-907c-a1dfc3cd05fd") else { return }
+                
+        URLSession.shared.dataTaskPublisher(for: url)                                   //1
+            .subscribe(on: DispatchQueue.global(qos: .background))                      //2 + 2.1 - Optional
+            .receive(on: DispatchQueue.main)                                            //3
+            .tryMap(handleOutput)                                                       //4
+            .decode(type: OffersModel.self, decoder: JSONDecoder())                     //5
+            .sink { (completion) in                                                     //6
+                //1
+                print("COMPLETION: \(completion)")
+                //2 ERRORS - In SWITCH
+                switch completion {
+                case .finished:
+                    print("COMPLETION: \(completion)")
+                case .failure(let error):
+                    print("COMPLETION ERROR: \(error)")
+                }
+            } receiveValue: { [weak self] (returnedOffers) in
+                self?.allOffers = returnedOffers.offers
+            }
+        
+            .store(in: &cancellables)                                                   //7
+    }
+    
+    func handleOutput(output: URLSession.DataTaskPublisher.Output) throws -> Data {
+        guard
+            let response = output.response as? HTTPURLResponse,
+            response.statusCode >= 200 && response.statusCode < 300 else {
+            throw URLError(.badServerResponse)
+        }
+        return output.data
+    }
+
+}
+
+// MARK: - Offer View
+struct OffersCard: View {
+    var imageName: String
     var title: String
     var town: String
     var price: Int
-}
-
-struct Offers: View {
-    var offers: OffersModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Rectangle()
-                .frame(width: 133,height: 133)
+            Image(imageName)
+                .frame(width: 140,height: 140)
                 .cornerRadius(16)
             
-            Text(offers.title)
+            Text(title)
                 .font(.headline)
             
             VStack(alignment: .leading, spacing: 4.0) {
-                Text(offers.town)
+                Text(town)
                     .font(.subheadline)
                 
                 HStack {
                     Image(systemName: "airplane")
-                    Text("от \(offers.price) ₽ ")
+                    Text("от \(price) ₽ ")
                 }
             }
         }
