@@ -68,14 +68,25 @@ enum Tab: String {
 }
 
 struct Ticket: View {
+    @State private var textFieldIn: String = ""
+    @State private var textFieldOut: String = ""
+    
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("Авиабилеты")
-                Text("Авиабилеты")
-                Text("Авиабилеты")
+            ScrollView(.vertical) {
+                VStack {
+                    SearchTitle()
+                        .padding(.top, 28)
+                        
+                    SearchCard(textFieldIn: $textFieldIn, textFieldOut: $textFieldOut)
+                        .padding(.horizontal, 16)
+                        .padding(.top, 38)
+
+                    
+                    Spacer()
+                }
+                .toolbar(.hidden, for: .navigationBar)
             }
-            .toolbar(.hidden, for: .navigationBar)
         }
     }
 }
@@ -113,5 +124,50 @@ struct Profile: View {
             Text("Профиль")
                 .navigationTitle("Профиль")
         }
+    }
+}
+
+struct SearchCard: View {
+    @Binding var textFieldIn: String
+    @Binding var textFieldOut: String
+    
+    var body: some View {
+        HStack(spacing: 20) {
+            Image(systemName: "magnifyingglass")
+                .resizable()
+                .frame(width: 16, height: 16)
+            
+            VStack {
+                TextField(text: $textFieldIn) {
+                    Text("Минск")
+                        .foregroundStyle(.appWhite)
+                }
+                
+                RoundedRectangle(cornerRadius: 2)
+                    .foregroundStyle(.gray)
+                    .frame(height: 2)
+                
+                TextField(text: $textFieldOut) {
+                    Text("Куда - Турция")
+                }
+            }
+            .padding(.vertical, 8)
+        }
+        .bold()
+        .foregroundStyle(.gray)
+        .padding()
+        .background(.appGray4)
+        .cornerRadius(16)
+        .padding()
+        .background(.appGray3)
+        .cornerRadius(16)
+    }
+}
+
+struct SearchTitle: View {
+    var body: some View {
+        Text("Поиск дешевых \nвиабилетов")
+            .multilineTextAlignment(.center)
+            .font(.system(size: 22, weight: .bold))
     }
 }
