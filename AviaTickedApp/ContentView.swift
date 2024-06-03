@@ -39,8 +39,8 @@ struct ContentView: View {
 }
 
 struct Ticket: View {
-    @State private var textFieldIn: String = ""
-    @State private var textFieldOut: String = ""
+    @AppStorage("textFieldIn") private var textFieldIn: String = ""
+    @AppStorage("textFieldOut") private var textFieldOut: String = ""
     @StateObject private var vm = OffersViewModel()
     
     var body: some View {
@@ -63,10 +63,10 @@ struct Ticket: View {
                             HStack(spacing: 20) {
                                 ForEach(vm.allOffers) { offer in
                                     OffersCard(
-                                        imageName: String(offer.id),
                                         title: offer.title,
                                         town: offer.town,
-                                        price: offer.price.value
+                                        price: offer.price.value,
+                                        imageName: String(offer.id)
                                     )
                                 }
                             }
@@ -143,9 +143,6 @@ struct Profile: View {
 
 
 
-
-
-
 struct SearchCard: View {
     @Binding var textFieldIn: String
     @Binding var textFieldOut: String
@@ -194,9 +191,6 @@ struct SearchTitle: View {
             .font(.system(size: 22, weight: .bold))
     }
 }
-
-
-
 
 
 
@@ -299,14 +293,15 @@ final class OffersViewModel: ObservableObject {
 
 // MARK: - Offer View
 struct OffersCard: View {
-    var imageName: String
     var title: String
     var town: String
     var price: Int
+    var imageName: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Image(imageName)
+                .resizable()
                 .frame(width: 140,height: 140)
                 .cornerRadius(16)
             
