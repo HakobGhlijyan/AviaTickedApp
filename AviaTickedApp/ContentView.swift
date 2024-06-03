@@ -82,6 +82,42 @@ struct Ticket: View {
                         .padding(.horizontal, 16)
                         .padding(.top, 38)
 
+                    VStack(alignment: .leading, spacing: 26.0) {
+                        Text("Музыкально отлететь")
+                            .fontWeight(.semibold)
+                            .font(.system(size: 22))
+                        
+                        ScrollView(.horizontal) {
+                            HStack(spacing: 20) {
+                                ForEach(0 ..< 5) { item in
+                                    Offers(
+                                        offers: OffersModel(
+                                            id: 1,
+                                            title: "Die Antwoord",
+                                            town: "Будапешт",
+                                            price: 22264
+                                        )
+                                    )
+                                }
+                            }
+                        }
+                        .scrollIndicators(.hidden)
+                        
+                        Button(action: {
+                            
+                        }, label: {
+                            Text("Показать все места")
+                                .font(.headline)
+                                .foregroundStyle(.appWhite)
+                                .frame(height: 55)
+                                .frame(maxWidth: .infinity)
+                                .background(.appGray4)
+                                .cornerRadius(10)
+                        })
+                    }
+                    .padding(16)
+                    
+                    
                     
                     Spacer()
                 }
@@ -143,9 +179,9 @@ struct SearchCard: View {
                         .foregroundStyle(.appWhite)
                 }
                 
-                RoundedRectangle(cornerRadius: 2)
+                RoundedRectangle(cornerRadius: 1)
                     .foregroundStyle(.gray)
-                    .frame(height: 2)
+                    .frame(height: 1)
                 
                 TextField(text: $textFieldOut) {
                     Text("Куда - Турция")
@@ -169,5 +205,38 @@ struct SearchTitle: View {
         Text("Поиск дешевых \nвиабилетов")
             .multilineTextAlignment(.center)
             .font(.system(size: 22, weight: .bold))
+    }
+}
+
+
+struct OffersModel {
+    var id: Int
+    var title: String
+    var town: String
+    var price: Int
+}
+
+struct Offers: View {
+    var offers: OffersModel
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Rectangle()
+                .frame(width: 133,height: 133)
+                .cornerRadius(16)
+            
+            Text(offers.title)
+                .font(.headline)
+            
+            VStack(alignment: .leading, spacing: 4.0) {
+                Text(offers.town)
+                    .font(.subheadline)
+                
+                HStack {
+                    Image(systemName: "airplane")
+                    Text("от \(offers.price) ₽ ")
+                }
+            }
+        }
     }
 }
