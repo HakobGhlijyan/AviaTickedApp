@@ -48,16 +48,17 @@ struct Ticket: View {
             ScrollView(.vertical) {
                 VStack {
                     SearchTitle()
-                        .padding(.top, 28)
+                        .padding(.top, 20)
                         
                     SearchCard(textFieldIn: $textFieldIn, textFieldOut: $textFieldOut)
                         .padding(.horizontal, 16)
-                        .padding(.top, 38)
+                        .padding(.top, 28)
 
-                    VStack(alignment: .leading, spacing: 26.0) {
+                    VStack(alignment: .leading, spacing: 16.0) {
                         Text("Музыкально отлететь")
                             .fontWeight(.semibold)
                             .font(.system(size: 22))
+                            .padding(.leading, 16)
                         
                         ScrollView(.horizontal) {
                             HStack(spacing: 20) {
@@ -70,6 +71,7 @@ struct Ticket: View {
                                     )
                                 }
                             }
+                            .offset(x: 16)
                         }
                         .scrollIndicators(.hidden)
                         
@@ -84,10 +86,10 @@ struct Ticket: View {
                                 .background(.appGray4)
                                 .cornerRadius(10)
                         })
+                        .padding(16)
+                        
                     }
-                    .padding(16)
-                    
-                    
+                    .padding(.top, 16)
                     
                     Spacer()
                 }
