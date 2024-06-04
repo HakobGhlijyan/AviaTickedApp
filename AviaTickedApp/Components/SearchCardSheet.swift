@@ -53,7 +53,7 @@ struct SearchCardSheet: View {
                     .onTapGesture {
                         textFieldOutPressedForSheet = true
                     }
-                    HStack {
+                    HStack(spacing: 20.0) {
                         Button(action: {
                             action?()
                         }, label: {

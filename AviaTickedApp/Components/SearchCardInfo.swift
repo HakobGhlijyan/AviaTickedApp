@@ -53,24 +53,13 @@ struct SearchCardInfo: View {
                     .onTapGesture {
                         textFieldOutPressedForSheet = true
                     }
-                    HStack {
-                        Button(action: {
-                            //!!!!!!!!!!!!!!!!!!!!!!go new
-                        }, label: {
-                            Image(systemName: "arrow.right")
-                                .resizable()
-                                .frame(width: 14, height: 14)
-                        })
-                        .opacity(textFieldOut.isEmpty ? 0 : 1)
-                        Button(action: {
-                            textFieldOut = ""
-                        }, label: {
-                            Image(systemName: "xmark")
-                                .resizable()
-                                .frame(width: 14, height: 14)
-                        })
-                    }
-                    
+                    Button(action: {
+                        textFieldOut = ""
+                    }, label: {
+                        Image(systemName: "xmark")
+                            .resizable()
+                            .frame(width: 14, height: 14)
+                    })
                 }
             }
         }
