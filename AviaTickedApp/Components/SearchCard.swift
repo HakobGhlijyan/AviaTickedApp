@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchCard: View {
     @Binding var textFieldIn: String
     @Binding var textFieldOut: String
+    @Binding var textFieldOutPressedForSheet: Bool
     
     var body: some View {
         HStack(spacing: 20) {
@@ -22,19 +23,29 @@ struct SearchCard: View {
             })
             
             VStack {
-                TextField(text: $textFieldIn) {
-                    Text("Откуда - Москва")
+                HStack {
+                    TextField(text: $textFieldIn) {
+                        Text("Откуда - Москва")
+                    }
+                    .foregroundStyle(.appWhite)
                 }
                 
                 RoundedRectangle(cornerRadius: 1)
                     .foregroundStyle(.gray)
                     .frame(height: 1)
                 
-                TextField(text: $textFieldOut) {
-                    Text("Куда - Турция")
+                HStack {
+                    TextField(text: $textFieldOut) {
+                        Text("Куда - Турция")
+                    }
+                    .foregroundStyle(.appWhite)
+                    .disabled(textFieldIn.isEmpty ? true : false)
+                    .onTapGesture {
+                        textFieldOutPressedForSheet = true
+                    }
+
                 }
             }
-            .foregroundStyle(.appWhite)
             .padding(.vertical, 8)
         }
         .bold()
@@ -47,6 +58,7 @@ struct SearchCard: View {
         .cornerRadius(16)
     }
 }
+
 #Preview {
     RootView()
 }

@@ -17,5 +17,7 @@ struct SearchTitle: View {
 
 
 #Preview {
-    SearchTitle()
+    ZStack {
+        SearchTitle()
+    }
 }
