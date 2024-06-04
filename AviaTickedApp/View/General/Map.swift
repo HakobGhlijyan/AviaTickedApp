@@ -12,6 +12,8 @@ struct Map: View {
         NavigationStack {
             Text("Короче")
                 .navigationTitle("Короче")
+                .navigationBarTitleDisplayMode(.inline)
+
         }
     }
 }

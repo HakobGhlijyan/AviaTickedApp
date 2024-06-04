@@ -12,6 +12,8 @@ struct Subscribe: View {
         NavigationStack {
             Text("Подписки")
                 .navigationTitle("Подписки")
+                .navigationBarTitleDisplayMode(.inline)
+
         }
     }
 }

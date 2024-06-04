@@ -12,6 +12,8 @@ struct Profile: View {
         NavigationStack {
             Text("Профиль")
                 .navigationTitle("Профиль")
+                .navigationBarTitleDisplayMode(.inline)
+
         }
     }
 }

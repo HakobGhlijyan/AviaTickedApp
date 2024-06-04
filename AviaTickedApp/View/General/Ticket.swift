@@ -18,11 +18,11 @@ struct Tickets: View {
                 ScrollView(.vertical) {
                     VStack {
                         SearchTitle()
-                            .padding(.top, 20)
+                            .padding(.top, 10)
                             
                         SearchCard(textFieldIn: $textFieldIn, textFieldOut: $textFieldOut, textFieldOutPressedForSheet: $textFieldOutPressedForSheet)
                             .padding(.horizontal, 16)
-                            .padding(.top, 28)
+                            .padding(.top, 18)
                             .sheet(isPresented: $textFieldOutPressedForSheet, content: {
                                 SearchView(
                                     textFieldIn: $textFieldIn,
@@ -37,7 +37,27 @@ struct Tickets: View {
                         
                         Spacer()
                     }
-                    .toolbar(.hidden, for: .navigationBar)
+//                    .toolbar(.hidden, for: .navigationBar)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            Button(action: {
+                                
+                            }, label: {
+                                Image(systemName: "gear")
+                            })
+                            .tint(.primary)
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button(action: {
+                                
+                            }, label: {
+                                Image(systemName: "plus")
+                            })
+                            .tint(.primary)
+                        }
+                    }
+                    .navigationTitle("Авиабилеты")
+                    .navigationBarTitleDisplayMode(.inline)
                 }
             }
     }

@@ -12,6 +12,8 @@ struct Hotel: View {
         NavigationStack {
             Text("Отели")
                 .navigationTitle("Отели")
+                .navigationBarTitleDisplayMode(.inline)
+
         }
     }
 }
