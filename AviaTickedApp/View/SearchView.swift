@@ -12,6 +12,7 @@ struct SearchView: View {
     @Binding var textFieldOut: String
     @Binding var textFieldOutPressedForSheet: Bool
     @State private var elementsPressed: Bool = false
+    @State private var searchCardViewInfo: Bool = false
     
     var body: some View {
         ScrollView {
@@ -21,18 +22,23 @@ struct SearchView: View {
                     .frame(width: 50, height: 6)
                     .padding(.vertical, 16)
                     
-                SearchCardSheet(textFieldIn: $textFieldIn, textFieldOut: $textFieldOut, textFieldOutPressedForSheet: $textFieldOutPressedForSheet)
+                SearchCardSheet(textFieldIn: $textFieldIn, textFieldOut: $textFieldOut, textFieldOutPressedForSheet: $textFieldOutPressedForSheet, action: {
+                    searchCardViewInfo.toggle()
+                })
                     .padding(.horizontal, 16)
                 
                 ElementSection
                 
                 LocationView()
-                    .padding(16)
+                    .padding(.horizontal, 16)
                 
                 Spacer()
             }
             .sheet(isPresented: $elementsPressed, content: {
                 Text("Hello")
+            })
+            .fullScreenCover(isPresented: $searchCardViewInfo, content: {
+                SearchCardViewInfo(textFieldIn: $textFieldIn, textFieldOut: $textFieldOut, textFieldOutPressedForSheet: $textFieldOutPressedForSheet)
             })
             .scrollIndicators(.hidden)
         }

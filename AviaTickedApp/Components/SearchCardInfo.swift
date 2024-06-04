@@ -1,5 +1,5 @@
 //
-//  SearchCardSheet.swift
+//  SearchCardViewInfo.swift
 //  AviaTickedApp
 //
 //  Created by Hakob Ghlijyan on 04.06.2024.
@@ -7,24 +7,28 @@
 
 import SwiftUI
 
-struct SearchCardSheet: View {
+struct SearchCardInfo: View {
     @Binding var textFieldIn: String
     @Binding var textFieldOut: String
     @Binding var textFieldOutPressedForSheet: Bool
-    var action: (() -> Void)?
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
+        HStack(spacing: 16.0) {
+            Button(action: {
+                dismiss()
+            }, label: {
+                Image(systemName: "arrow.left")
+                    .resizable()
+                    .frame(width: 16, height: 16)
+            })
             VStack {
                 HStack {
-                    Image(systemName: "airplane")
-                        .resizable()
-                        .frame(width: 16, height: 16)
-                    
                     TextField(text: $textFieldIn) {
                         Text("Откуда - Москва")
                     }
                     .foregroundStyle(.appWhite)
-
+                    
                     Button(action: {
                         let texInt = textFieldIn
                         let textOut = textFieldOut
@@ -42,10 +46,6 @@ struct SearchCardSheet: View {
                     .frame(height: 1)
                 
                 HStack {
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .frame(width: 16, height: 16)
-                    
                     TextField(text: $textFieldOut) {
                         Text("Куда - Турция")
                     }
@@ -55,7 +55,7 @@ struct SearchCardSheet: View {
                     }
                     HStack {
                         Button(action: {
-                            action?()
+                            //!!!!!!!!!!!!!!!!!!!!!!go new
                         }, label: {
                             Image(systemName: "arrow.right")
                                 .resizable()
@@ -73,12 +73,13 @@ struct SearchCardSheet: View {
                     
                 }
             }
-            .padding(.vertical, 8)
-            .bold()
-            .foregroundStyle(.gray)
-            .padding()
-            .background(.appGray4)
-            .cornerRadius(16)
+        }
+        .padding(.vertical, 8)
+        .bold()
+        .foregroundStyle(.gray)
+        .padding()
+        .background(.appGray4)
+        .cornerRadius(16)
     }
 }
 

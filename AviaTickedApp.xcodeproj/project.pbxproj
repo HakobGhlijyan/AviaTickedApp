@@ -24,6 +24,8 @@
 		345721AE2C0F28CD0017D10D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345721AD2C0F28CD0017D10D /* Location.swift */; };
 		345721B02C0F2AFD0017D10D /* LocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345721AF2C0F2AFD0017D10D /* LocationRow.swift */; };
 		345721B22C0F2DDF0017D10D /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345721B12C0F2DDF0017D10D /* LocationView.swift */; };
+		345721B42C0F346B0017D10D /* SearchCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345721B32C0F346B0017D10D /* SearchCardInfo.swift */; };
+		345721B62C0F37130017D10D /* SearchCardViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345721B52C0F37130017D10D /* SearchCardViewInfo.swift */; };
 		34F71F7B2C0DD5B800416E51 /* AviaTickedAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F71F7A2C0DD5B800416E51 /* AviaTickedAppApp.swift */; };
 		34F71F7D2C0DD5B800416E51 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F71F7C2C0DD5B800416E51 /* RootView.swift */; };
 		34F71F7F2C0DD5B900416E51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F71F7E2C0DD5B900416E51 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		345721AD2C0F28CD0017D10D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		345721AF2C0F2AFD0017D10D /* LocationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRow.swift; sourceTree = "<group>"; };
 		345721B12C0F2DDF0017D10D /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		345721B32C0F346B0017D10D /* SearchCardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCardInfo.swift; sourceTree = "<group>"; };
+		345721B52C0F37130017D10D /* SearchCardViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCardViewInfo.swift; sourceTree = "<group>"; };
 		34F71F772C0DD5B800416E51 /* AviaTickedApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaTickedApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F71F7A2C0DD5B800416E51 /* AviaTickedAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviaTickedAppApp.swift; sourceTree = "<group>"; };
 		34F71F7C2C0DD5B800416E51 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 				340C82102C0F0AEA006E15F6 /* Subscribe.swift */,
 				340C82122C0F0B03006E15F6 /* Profile.swift */,
 				340C82232C0F11D3006E15F6 /* SearchView.swift */,
+				345721B52C0F37130017D10D /* SearchCardViewInfo.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 			children = (
 				340C82152C0F0B35006E15F6 /* SearchCard.swift */,
 				345721A32C0F15B20017D10D /* SearchCardSheet.swift */,
+				345721B32C0F346B0017D10D /* SearchCardInfo.swift */,
 				340C821B2C0F0BCF006E15F6 /* OffersCard.swift */,
 				340C821F2C0F0C6A006E15F6 /* SearchTitle.swift */,
 				345721A82C0F1A020017D10D /* ModalViewEx.swift */,
@@ -230,9 +236,11 @@
 				340C82132C0F0B03006E15F6 /* Profile.swift in Sources */,
 				340C820D2C0F0AB2006E15F6 /* Hotel.swift in Sources */,
 				340C82182C0F0B84006E15F6 /* Tab.swift in Sources */,
+				345721B42C0F346B0017D10D /* SearchCardInfo.swift in Sources */,
 				340C82222C0F0C85006E15F6 /* OffersViewModel.swift in Sources */,
 				34F71F7D2C0DD5B800416E51 /* RootView.swift in Sources */,
 				340C821C2C0F0BCF006E15F6 /* OffersCard.swift in Sources */,
+				345721B62C0F37130017D10D /* SearchCardViewInfo.swift in Sources */,
 				340C82162C0F0B35006E15F6 /* SearchCard.swift in Sources */,
 				340C820F2C0F0ACA006E15F6 /* Map.swift in Sources */,
 				345721A42C0F15B20017D10D /* SearchCardSheet.swift in Sources */,
