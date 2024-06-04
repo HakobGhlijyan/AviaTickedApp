@@ -7,16 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340C820D2C0F0AB2006E15F6 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C820C2C0F0AB2006E15F6 /* Hotel.swift */; };
+		340C820F2C0F0ACA006E15F6 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C820E2C0F0ACA006E15F6 /* Map.swift */; };
+		340C82112C0F0AEA006E15F6 /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C82102C0F0AEA006E15F6 /* Subscribe.swift */; };
+		340C82132C0F0B03006E15F6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C82122C0F0B03006E15F6 /* Profile.swift */; };
+		340C82162C0F0B35006E15F6 /* SearchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C82152C0F0B35006E15F6 /* SearchCard.swift */; };
+		340C82182C0F0B84006E15F6 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C82172C0F0B84006E15F6 /* Tab.swift */; };
+		340C821A2C0F0BAF006E15F6 /* OffersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C82192C0F0BAF006E15F6 /* OffersModel.swift */; };
+		340C821C2C0F0BCF006E15F6 /* OffersCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C821B2C0F0BCF006E15F6 /* OffersCard.swift */; };
+		340C821E2C0F0C3F006E15F6 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C821D2C0F0C3F006E15F6 /* Ticket.swift */; };
+		340C82202C0F0C6A006E15F6 /* SearchTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C821F2C0F0C6A006E15F6 /* SearchTitle.swift */; };
+		340C82222C0F0C85006E15F6 /* OffersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C82212C0F0C85006E15F6 /* OffersViewModel.swift */; };
 		34F71F7B2C0DD5B800416E51 /* AviaTickedAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F71F7A2C0DD5B800416E51 /* AviaTickedAppApp.swift */; };
-		34F71F7D2C0DD5B800416E51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F71F7C2C0DD5B800416E51 /* ContentView.swift */; };
+		34F71F7D2C0DD5B800416E51 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F71F7C2C0DD5B800416E51 /* RootView.swift */; };
 		34F71F7F2C0DD5B900416E51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F71F7E2C0DD5B900416E51 /* Assets.xcassets */; };
 		34F71F822C0DD5B900416E51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F71F812C0DD5B900416E51 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		340C820C2C0F0AB2006E15F6 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		340C820E2C0F0ACA006E15F6 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		340C82102C0F0AEA006E15F6 /* Subscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
+		340C82122C0F0B03006E15F6 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		340C82152C0F0B35006E15F6 /* SearchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCard.swift; sourceTree = "<group>"; };
+		340C82172C0F0B84006E15F6 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		340C82192C0F0BAF006E15F6 /* OffersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersModel.swift; sourceTree = "<group>"; };
+		340C821B2C0F0BCF006E15F6 /* OffersCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCard.swift; sourceTree = "<group>"; };
+		340C821D2C0F0C3F006E15F6 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		340C821F2C0F0C6A006E15F6 /* SearchTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTitle.swift; sourceTree = "<group>"; };
+		340C82212C0F0C85006E15F6 /* OffersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewModel.swift; sourceTree = "<group>"; };
 		34F71F772C0DD5B800416E51 /* AviaTickedApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaTickedApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F71F7A2C0DD5B800416E51 /* AviaTickedAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviaTickedAppApp.swift; sourceTree = "<group>"; };
-		34F71F7C2C0DD5B800416E51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		34F71F7C2C0DD5B800416E51 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		34F71F7E2C0DD5B900416E51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34F71F812C0DD5B900416E51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +54,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		340C82082C0F0A74006E15F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				340C82172C0F0B84006E15F6 /* Tab.swift */,
+				340C82192C0F0BAF006E15F6 /* OffersModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		340C820A2C0F0A84006E15F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				340C821D2C0F0C3F006E15F6 /* Ticket.swift */,
+				340C820C2C0F0AB2006E15F6 /* Hotel.swift */,
+				340C820E2C0F0ACA006E15F6 /* Map.swift */,
+				340C82102C0F0AEA006E15F6 /* Subscribe.swift */,
+				340C82122C0F0B03006E15F6 /* Profile.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		340C820B2C0F0A8A006E15F6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				340C82212C0F0C85006E15F6 /* OffersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		340C82142C0F0B13006E15F6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				340C82152C0F0B35006E15F6 /* SearchCard.swift */,
+				340C821B2C0F0BCF006E15F6 /* OffersCard.swift */,
+				340C821F2C0F0C6A006E15F6 /* SearchTitle.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		34F71F6E2C0DD5B800416E51 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +113,11 @@
 			isa = PBXGroup;
 			children = (
 				34F71F7A2C0DD5B800416E51 /* AviaTickedAppApp.swift */,
-				34F71F7C2C0DD5B800416E51 /* ContentView.swift */,
+				34F71F7C2C0DD5B800416E51 /* RootView.swift */,
+				340C820A2C0F0A84006E15F6 /* View */,
+				340C820B2C0F0A8A006E15F6 /* ViewModel */,
+				340C82082C0F0A74006E15F6 /* Model */,
+				340C82142C0F0B13006E15F6 /* Components */,
 				34F71F7E2C0DD5B900416E51 /* Assets.xcassets */,
 				34F71F802C0DD5B900416E51 /* Preview Content */,
 			);
@@ -137,7 +202,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34F71F7D2C0DD5B800416E51 /* ContentView.swift in Sources */,
+				340C82202C0F0C6A006E15F6 /* SearchTitle.swift in Sources */,
+				340C821E2C0F0C3F006E15F6 /* Ticket.swift in Sources */,
+				340C82112C0F0AEA006E15F6 /* Subscribe.swift in Sources */,
+				340C821A2C0F0BAF006E15F6 /* OffersModel.swift in Sources */,
+				340C82132C0F0B03006E15F6 /* Profile.swift in Sources */,
+				340C820D2C0F0AB2006E15F6 /* Hotel.swift in Sources */,
+				340C82182C0F0B84006E15F6 /* Tab.swift in Sources */,
+				340C82222C0F0C85006E15F6 /* OffersViewModel.swift in Sources */,
+				34F71F7D2C0DD5B800416E51 /* RootView.swift in Sources */,
+				340C821C2C0F0BCF006E15F6 /* OffersCard.swift in Sources */,
+				340C82162C0F0B35006E15F6 /* SearchCard.swift in Sources */,
+				340C820F2C0F0ACA006E15F6 /* Map.swift in Sources */,
 				34F71F7B2C0DD5B800416E51 /* AviaTickedAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
