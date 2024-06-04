@@ -10,13 +10,15 @@ import SwiftUI
 struct Map: View {
     var body: some View {
         NavigationStack {
-            Text("Короче")
-                .navigationTitle("Короче")
-                .navigationBarTitleDisplayMode(.inline)
-
+            ZStack {
+                Color(.appBlack).ignoresSafeArea()
+                Text("Короче").foregroundStyle(.appWhite)
+            }
+            .navigationTitle("Короче")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 #Preview {
-    Map()
+    RootView()
 }

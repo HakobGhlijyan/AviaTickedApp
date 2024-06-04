@@ -30,6 +30,7 @@ struct RootView: View {
                 .tag(Tab.profile)
                 .tabItem { Tab.profile.tabContent }
         }
+        .preferredColorScheme(.dark)
     }
 }
 

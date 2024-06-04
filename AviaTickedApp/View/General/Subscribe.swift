@@ -10,14 +10,16 @@ import SwiftUI
 struct Subscribe: View {
     var body: some View {
         NavigationStack {
-            Text("Подписки")
-                .navigationTitle("Подписки")
-                .navigationBarTitleDisplayMode(.inline)
-
+            ZStack {
+                Color(.appBlack).ignoresSafeArea()
+                Text("Подписки").foregroundStyle(.appWhite)
+            }
+            .navigationTitle("Подписки")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 #Preview {
-    Subscribe()
+    RootView()
 }

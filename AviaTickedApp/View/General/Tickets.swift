@@ -15,6 +15,9 @@ struct Tickets: View {
     
     var body: some View {
         NavigationStack {
+            ZStack {
+                Color(.appBlack).ignoresSafeArea()
+                
                 ScrollView(.vertical) {
                     VStack {
                         SearchTitle()
@@ -56,10 +59,12 @@ struct Tickets: View {
                             .tint(.primary)
                         }
                     }
-                    .navigationTitle("Авиабилеты")
-                    .navigationBarTitleDisplayMode(.inline)
+                    
                 }
             }
+            .navigationTitle("Авиабилеты")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

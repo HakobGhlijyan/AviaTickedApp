@@ -110,4 +110,6 @@ struct Elements: View {
 
 #Preview {
     Elements()
+        .preferredColorScheme(.dark)
+
 }

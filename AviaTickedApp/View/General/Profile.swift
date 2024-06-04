@@ -10,14 +10,16 @@ import SwiftUI
 struct Profile: View {
     var body: some View {
         NavigationStack {
-            Text("Профиль")
-                .navigationTitle("Профиль")
-                .navigationBarTitleDisplayMode(.inline)
-
+            ZStack {
+                Color(.appBlack).ignoresSafeArea()
+                Text("Профиль").foregroundStyle(.appWhite)
+            }
+            .navigationTitle("Профиль")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 #Preview {
-    Profile()
+    RootView()
 }

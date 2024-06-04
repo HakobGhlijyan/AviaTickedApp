@@ -27,4 +27,5 @@ struct LocationView: View {
 
 #Preview {
     LocationView()
+        .preferredColorScheme(.dark)
 }

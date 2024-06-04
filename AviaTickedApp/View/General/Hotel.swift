@@ -10,14 +10,16 @@ import SwiftUI
 struct Hotel: View {
     var body: some View {
         NavigationStack {
-            Text("Отели")
-                .navigationTitle("Отели")
-                .navigationBarTitleDisplayMode(.inline)
-
+            ZStack {
+                Color(.appBlack).ignoresSafeArea()
+                Text("Отели").foregroundStyle(.appWhite)
+            }
+            .navigationTitle("Отели")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 #Preview {
-    Hotel()
+    RootView()
 }
