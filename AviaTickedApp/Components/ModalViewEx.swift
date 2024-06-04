@@ -45,4 +45,6 @@ struct ModalViewEx: View {
         ModalViewEx(imageColor: .appWhite, recColor: .appDarkBlue, imageName: "calendar", title: "Выходные")
         ModalViewEx(imageColor: .appWhite, recColor: .appRed, imageName: "flame", title: "Горячие \nбилеты")
     }
+    .preferredColorScheme(.dark)
+
 }

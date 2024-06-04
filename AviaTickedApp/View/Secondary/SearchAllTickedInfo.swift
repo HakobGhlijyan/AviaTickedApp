@@ -30,8 +30,6 @@ struct SearchAllTickedInfo: View {
                 }
             }
             .scrollIndicators(.hidden)
-            
-            Spacer()
         }
         .padding(.horizontal, 16)
 

@@ -40,4 +40,6 @@ struct LocationRow: View {
         LocationRow(imageName: "sochi", title: "Сочи")
         LocationRow(imageName: "pxuket", title: "Пхукет")
     }
+    .preferredColorScheme(.dark)
+
 }

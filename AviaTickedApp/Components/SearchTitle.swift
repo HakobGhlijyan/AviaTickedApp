@@ -17,7 +17,7 @@ struct SearchTitle: View {
 
 
 #Preview {
-    ZStack {
-        SearchTitle()
-    }
+    SearchTitle()
+        .preferredColorScheme(.dark)
+
 }

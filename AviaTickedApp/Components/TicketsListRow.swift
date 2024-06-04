@@ -21,7 +21,7 @@ struct TicketsListRow: View {
                 
                     HStack {
                         Text(title)
-                            .frame(maxWidth: .infinity,alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         Text("\(price.value) P")
                     
                 }
