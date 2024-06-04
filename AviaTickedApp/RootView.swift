@@ -14,7 +14,7 @@ struct RootView: View {
     
     var body: some View {
         TabView(selection: $acriveTab) {
-            Ticket()
+            Tickets()
                 .tag(Tab.ticket)
                 .tabItem { Tab.ticket.tabContent }
             Hotel()

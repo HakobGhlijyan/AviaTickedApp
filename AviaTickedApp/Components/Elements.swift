@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Elements: View {
-    
     var backAction:(() -> Void)?
     var dateAction:(() -> Void)?
     var personAction:(() -> Void)?
@@ -54,7 +53,7 @@ struct Elements: View {
             dateAction?()
         }, label: {
             HStack(spacing: 8.0) {
-                Text("24 фев,")
+                Text("24 фев")
                     .font(.system(size: 14))
                 Text("сб")
                     .font(.system(size: 14))
@@ -76,7 +75,7 @@ struct Elements: View {
                     .resizable()
                     .frame(width: 16, height: 16)
                 
-                Text("1,эконом")
+                Text("1, эконом")
                     .font(.system(size: 14))
             }
             .padding(.horizontal, 10)

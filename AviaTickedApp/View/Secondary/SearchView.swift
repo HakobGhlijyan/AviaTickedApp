@@ -37,8 +37,13 @@ struct SearchView: View {
             .sheet(isPresented: $elementsPressed, content: {
                 Text("Hello")
             })
-            .fullScreenCover(isPresented: $searchCardViewInfo, content: {
-                SearchCardViewInfo(textFieldIn: $textFieldIn, textFieldOut: $textFieldOut, textFieldOutPressedForSheet: $textFieldOutPressedForSheet)
+            .fullScreenCover(isPresented: $searchCardViewInfo,
+                             content: {
+                SearchCardViewInfo(
+                    textFieldIn: $textFieldIn,
+                    textFieldOut: $textFieldOut,
+                    textFieldOutPressedForSheet: $textFieldOutPressedForSheet
+                )
             })
             .scrollIndicators(.hidden)
         }

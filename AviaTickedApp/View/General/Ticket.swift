@@ -1,5 +1,5 @@
 //
-//  Ticket.swift
+//  Tickets.swift
 //  AviaTickedApp
 //
 //  Created by Hakob Ghlijyan on 04.06.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Ticket: View {
+struct Tickets: View {
     @AppStorage("textFieldIn") private var textFieldIn: String = ""
     @AppStorage("textFieldOut") private var textFieldOut: String = ""
     @StateObject private var vm = OffersViewModel()
@@ -24,7 +24,11 @@ struct Ticket: View {
                             .padding(.horizontal, 16)
                             .padding(.top, 28)
                             .sheet(isPresented: $textFieldOutPressedForSheet, content: {
-                                SearchView(textFieldIn: $textFieldIn, textFieldOut: $textFieldOut, textFieldOutPressedForSheet: $textFieldOutPressedForSheet)
+                                SearchView(
+                                    textFieldIn: $textFieldIn,
+                                    textFieldOut: $textFieldOut,
+                                    textFieldOutPressedForSheet: $textFieldOutPressedForSheet
+                                )
                             })
 
                         OffersCardSection
@@ -39,7 +43,7 @@ struct Ticket: View {
     }
 }
 
-extension Ticket {
+extension Tickets {
     private var OffersCardSection: some View {
         VStack(alignment: .leading, spacing: 16.0) {
             Text("Музыкально отлететь")
@@ -119,6 +123,5 @@ extension Ticket {
 }
 
 #Preview {
-//    Ticket()
     RootView()
 }

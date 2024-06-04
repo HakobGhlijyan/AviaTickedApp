@@ -50,6 +50,6 @@ final class OffersViewModel: ObservableObject {
         }
         return output.data
     }
-
+    
 }
 

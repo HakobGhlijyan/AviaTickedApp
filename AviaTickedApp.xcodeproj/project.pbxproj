@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340058862C0F5647001DB80C /* SearchAllTickedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340058852C0F5647001DB80C /* SearchAllTickedInfo.swift */; };
+		340058882C0F56FE001DB80C /* SearchCardAllTicketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340058872C0F56FE001DB80C /* SearchCardAllTicketInfo.swift */; };
+		3400588A2C0F5D9E001DB80C /* SearchCardAllTicketRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340058892C0F5D9E001DB80C /* SearchCardAllTicketRow.swift */; };
+		3400588C2C0F5E24001DB80C /* AllTicketsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3400588B2C0F5E24001DB80C /* AllTicketsModel.swift */; };
+		3400588E2C0F5F51001DB80C /* AllTicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3400588D2C0F5F51001DB80C /* AllTicketsViewModel.swift */; };
 		340C820D2C0F0AB2006E15F6 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C820C2C0F0AB2006E15F6 /* Hotel.swift */; };
 		340C820F2C0F0ACA006E15F6 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C820E2C0F0ACA006E15F6 /* Map.swift */; };
 		340C82112C0F0AEA006E15F6 /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C82102C0F0AEA006E15F6 /* Subscribe.swift */; };
@@ -37,6 +42,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		340058852C0F5647001DB80C /* SearchAllTickedInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllTickedInfo.swift; sourceTree = "<group>"; };
+		340058872C0F56FE001DB80C /* SearchCardAllTicketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCardAllTicketInfo.swift; sourceTree = "<group>"; };
+		340058892C0F5D9E001DB80C /* SearchCardAllTicketRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCardAllTicketRow.swift; sourceTree = "<group>"; };
+		3400588B2C0F5E24001DB80C /* AllTicketsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTicketsModel.swift; sourceTree = "<group>"; };
+		3400588D2C0F5F51001DB80C /* AllTicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTicketsViewModel.swift; sourceTree = "<group>"; };
 		340C820C2C0F0AB2006E15F6 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		340C820E2C0F0ACA006E15F6 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		340C82102C0F0AEA006E15F6 /* Subscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
@@ -84,6 +94,7 @@
 				340C82172C0F0B84006E15F6 /* Tab.swift */,
 				340C82192C0F0BAF006E15F6 /* OffersModel.swift */,
 				345BA3202C0F451200850A01 /* TicketsOffersModel.swift */,
+				3400588B2C0F5E24001DB80C /* AllTicketsModel.swift */,
 				345721AD2C0F28CD0017D10D /* Location.swift */,
 			);
 			path = Model;
@@ -103,6 +114,7 @@
 			children = (
 				340C82212C0F0C85006E15F6 /* OffersViewModel.swift */,
 				345BA3222C0F45A500850A01 /* TicketsOffersViewModel.swift */,
+				3400588D2C0F5F51001DB80C /* AllTicketsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -113,6 +125,8 @@
 				340C82152C0F0B35006E15F6 /* SearchCard.swift */,
 				345721A32C0F15B20017D10D /* SearchCardSheet.swift */,
 				345721B32C0F346B0017D10D /* SearchCardInfo.swift */,
+				340058872C0F56FE001DB80C /* SearchCardAllTicketInfo.swift */,
+				340058892C0F5D9E001DB80C /* SearchCardAllTicketRow.swift */,
 				340C821B2C0F0BCF006E15F6 /* OffersCard.swift */,
 				340C821F2C0F0C6A006E15F6 /* SearchTitle.swift */,
 				345721A82C0F1A020017D10D /* ModalViewEx.swift */,
@@ -141,6 +155,7 @@
 			children = (
 				340C82232C0F11D3006E15F6 /* SearchView.swift */,
 				345721B52C0F37130017D10D /* SearchCardViewInfo.swift */,
+				340058852C0F5647001DB80C /* SearchAllTickedInfo.swift */,
 			);
 			path = Secondary;
 			sourceTree = "<group>";
@@ -254,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3400588E2C0F5F51001DB80C /* AllTicketsViewModel.swift in Sources */,
 				340C82202C0F0C6A006E15F6 /* SearchTitle.swift in Sources */,
 				345721A92C0F1A020017D10D /* ModalViewEx.swift in Sources */,
 				345BA3232C0F45A500850A01 /* TicketsOffersViewModel.swift in Sources */,
@@ -265,18 +281,22 @@
 				340C82132C0F0B03006E15F6 /* Profile.swift in Sources */,
 				345BA3212C0F451200850A01 /* TicketsOffersModel.swift in Sources */,
 				340C820D2C0F0AB2006E15F6 /* Hotel.swift in Sources */,
+				3400588C2C0F5E24001DB80C /* AllTicketsModel.swift in Sources */,
 				340C82182C0F0B84006E15F6 /* Tab.swift in Sources */,
 				345721B42C0F346B0017D10D /* SearchCardInfo.swift in Sources */,
 				345BA31F2C0F41D900850A01 /* TicketsListRow.swift in Sources */,
 				340C82222C0F0C85006E15F6 /* OffersViewModel.swift in Sources */,
+				340058862C0F5647001DB80C /* SearchAllTickedInfo.swift in Sources */,
 				34F71F7D2C0DD5B800416E51 /* RootView.swift in Sources */,
 				340C821C2C0F0BCF006E15F6 /* OffersCard.swift in Sources */,
 				345721B62C0F37130017D10D /* SearchCardViewInfo.swift in Sources */,
 				340C82162C0F0B35006E15F6 /* SearchCard.swift in Sources */,
+				3400588A2C0F5D9E001DB80C /* SearchCardAllTicketRow.swift in Sources */,
 				340C820F2C0F0ACA006E15F6 /* Map.swift in Sources */,
 				345721A42C0F15B20017D10D /* SearchCardSheet.swift in Sources */,
 				34F71F7B2C0DD5B800416E51 /* AviaTickedAppApp.swift in Sources */,
 				345721B22C0F2DDF0017D10D /* LocationView.swift in Sources */,
+				340058882C0F56FE001DB80C /* SearchCardAllTicketInfo.swift in Sources */,
 				345BA31D2C0F38E100850A01 /* Elements.swift in Sources */,
 				345721B02C0F2AFD0017D10D /* LocationRow.swift in Sources */,
 			);

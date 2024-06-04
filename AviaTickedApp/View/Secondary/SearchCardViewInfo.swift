@@ -11,6 +11,7 @@ struct SearchCardViewInfo: View {
     @Binding var textFieldIn: String
     @Binding var textFieldOut: String
     @Binding var textFieldOutPressedForSheet: Bool
+    
     @Environment(\.dismiss) private var dismiss
     
     @StateObject private var vm = TicketsOffersViewModel()
@@ -19,6 +20,8 @@ struct SearchCardViewInfo: View {
     @State private var dateAction: Bool = false
     
     @State private var toogleAction: Bool = false
+    
+    @State private var allTickedInfoList: Bool = false
 
     
     var body: some View {
@@ -28,7 +31,12 @@ struct SearchCardViewInfo: View {
                     .padding(.top, 24)
                     .padding(.horizontal, 16)
                 
-                Elements(backAction: nil, dateAction: nil, personAction: nil, filterAction: nil)
+                Elements(
+                    backAction: nil,
+                    dateAction: nil,
+                    personAction: nil,
+                    filterAction: nil
+                )
                 .padding(.top, 8)
                 .padding(.horizontal, 16)
                             
@@ -41,6 +49,14 @@ struct SearchCardViewInfo: View {
                 
                 Spacer()
             }
+            .fullScreenCover(isPresented: $allTickedInfoList,
+                             content: {
+                SearchAllTickedInfo(
+                    textFieldIn: $textFieldIn,
+                    textFieldOut: $textFieldOut,
+                    textFieldOutPressedForSheet: $textFieldOutPressedForSheet
+                )
+            })
             .scrollIndicators(.hidden)
         }
     }
@@ -95,7 +111,7 @@ struct SearchCardViewInfo: View {
     
     private var allTickedButton: some View {
         Button(action: {
-            
+            allTickedInfoList.toggle()
         }, label: {
             Text("Показать все билеты")
                 .font(.headline)
