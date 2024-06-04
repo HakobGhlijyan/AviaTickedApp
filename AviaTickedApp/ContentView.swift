@@ -320,5 +320,6 @@ struct OffersCard: View {
                 }
             }
         }
+        .background(.black.opacity(0.001))
     }
 }
